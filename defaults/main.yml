@@ -1,6 +1,6 @@
 ---
-tomcat6_enabled: true
-tomcat6_hostname: localhost
-tomcat6_server_port: 8005
-tomcat6_catalina_port: 8983
-tomcat6_catalina_redirect_port: 8443
+tomcat_enabled: true
+tomcat_hostname: "{{ ansible_hostname }}"
+tomcat_server_port: 8005
+tomcat_catalina_port: 8080  #8983    #tomcat default port is 8080
+tomcat_catalina_redirect_port: 8443

@@ -1,12 +1,13 @@
 ---
-- name: Ensure Tomcat6 packages are installed (RedHat).
+---
+- name: Ensure tomcat packages are installed (RedHat).
   yum:
     name: "{{ item }}"
     state: installed
   with_items:
-    - tomcat6
-    - tomcat6-webapps
-    - tomcat6-admin-webapps
+    - tomcat
+    - tomcat-webapps
+    - tomcat-admin-webapps
   when: ansible_os_family == 'RedHat'
 
 - name: Update apt cache (Debian).
@@ -15,24 +16,24 @@
     cache_valid_time: 86400
   when: ansible_os_family == 'Debian'
 
-- name: Ensure Tomcat6 is installed (Debian).
+- name: Ensure tomcat is installed (Debian).
   apt:
-    name: tomcat6
+    name: tomcat
     state: installed
   when: ansible_os_family == 'Debian'
 
-- name: Copy tomcat6 server.xml.
+- name: Copy tomcat server.xml.
   template:
     src: server.xml.j2
-    dest: /etc/tomcat6/server.xml
+    dest: /etc/tomcat/server.xml
     owner: root
     group: root
     mode: 0644
   notify: restart tomcat
 
-- name: Ensure tomcat6 is running.
+- name: Ensure tomcat is running.
   service:
-    name: tomcat6
+    name: tomcat
     state: started
     enabled: yes
-  when: tomcat6_enabled
+  when: tomcat_enabled
