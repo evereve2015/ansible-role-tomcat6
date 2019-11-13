@@ -53,5 +53,5 @@ MIT / BSD
 
 ## Author Information
 
-This role was created in 2014 by [Jeff Geerling](https://www.jeffgeerling.com/), author of [Ansible for DevOps](https://www.ansiblefordevops.com/).
-This role was updated in 2017 by Wally Chu @ Macquarie University.
+This role was updated in 2017 by Wally Chu @ Macquarie University. The original role was created in 2014 by [Jeff Geerling](https://www.jeffgeerling.com/), author of [Ansible for DevOps](https://www.ansiblefordevops.com/).
+
